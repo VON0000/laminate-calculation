@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "laminate-calculation",
+    "productName": "层合板力学性能计算程序",
     "version": "0.1.0"
   },
   "tauri": {
@@ -23,24 +23,37 @@
       },
       "externalBin": [],
       "icon": [
-        "icons/material.png"
+        "icons/material.png",
+        "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "laminate-calculation.labcoder.cn",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
         "frameworks": [],
-        "providerShortName": null,
+        "providerShortName": "labcoder.cn",
         "signingIdentity": null
       },
       "resources": [],
       "shortDescription": "",
-      "targets": "all",
+      "targets": [
+        "deb",
+        "nsis",
+        "dmg",
+        "updater"
+      ],
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
-        "timestampUrl": ""
+        "timestampUrl": "",
+        "nsis": {
+          "languages": [
+            "SimpChinese"
+          ],
+          "displayLanguageSelector": false,
+          "installerIcon": "icons/icon.ico"
+        }
       }
     },
     "security": {
@@ -54,7 +67,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "laminate-calculation",
+        "title": "层合板力学性能计算程序",
         "width": 800
       }
     ]
