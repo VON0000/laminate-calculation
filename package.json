@@ -25,6 +25,7 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.6.0",
     "@vitejs/plugin-vue": "^2.3.4",
     "typescript": "^4.9.3",
     "unplugin-auto-import": "^0.7.2",
