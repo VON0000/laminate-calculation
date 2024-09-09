@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "层合板力学性能计算程序",
-    "version": "0.1.0"
+    "version": "4.0.0"
   },
   "tauri": {
     "allowlist": {

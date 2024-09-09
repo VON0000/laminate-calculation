@@ -1,11 +1,11 @@
 [package]
-name = "app"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "laminate-calculation"
+version = "4.0.0"
+description = "层合板力学性能计算程序"
+authors = ["github@laorange", "github@VON0000"]
 license = ""
 repository = ""
-default-run = "app"
+default-run = "laminate-calculation"
 edition = "2021"
 rust-version = "1.60"
 

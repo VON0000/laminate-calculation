@@ -4,13 +4,14 @@
   "author": "laorange",
   "homepage": "https://github.com/laorange/laminate-calculation",
   "license": "AGPL-3.0",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build --base=./",
     "build-flask": "vue-tsc --noEmit && vite build --base=/static/",
     "build-go": "vue-tsc --noEmit && vite build --base=/dist/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tauri-build": "tauri build"
   },
   "dependencies": {
     "axios": "^0.27.2",
