@@ -38,4 +38,10 @@ jobs:
         
     - name: compile
       run: pnpm run tauri-build
+
+    - uses: tauri-apps/tauri-action@v0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        releaseId: ${{ needs.create-release.outputs.release_id }}
         
