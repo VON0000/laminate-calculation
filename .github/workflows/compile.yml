@@ -29,10 +29,9 @@ jobs:
       with:
         version: 7
         run_install: false
-        useLockFile: false
 
     - name: Install dependencies
-      run: pnpm install
+      run: pnpm install --ignore-scripts --ignore-optional
         
     - name: compile
       run: pnpm run build
