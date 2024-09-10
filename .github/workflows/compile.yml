@@ -16,8 +16,19 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Install Node.js
+      uses: action/setup-node@v4.0.3
+      with: 
+        node-version: 16
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4.0.0
+      with:
+        version: 7
+        
+    - name: compile
+      run: pnpm run build
+        
