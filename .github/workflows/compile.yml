@@ -2,9 +2,9 @@ name: Compile
 
 on:
   push:
-    branches: [ "tauri" ]
+    branches: [ "workflow" ]
   pull_request:
-    branches: [ "tauri" ]
+    branches: [ "workflow" ]
   workflow_dispatch:
 
 env:
