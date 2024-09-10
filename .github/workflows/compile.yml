@@ -13,7 +13,7 @@ env:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout
@@ -26,11 +26,6 @@ jobs:
 
     - name: install Rust stable
       uses: dtolnay/rust-toolchain@stable
-
-    - name: install dependencies of ubuntu
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
 
     - name: Setup pnpm
       uses: pnpm/action-setup@v4.0.0
