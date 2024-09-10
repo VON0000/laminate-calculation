@@ -24,6 +24,9 @@ jobs:
       with: 
         node-version: 18
 
+    - name: install Rust stable
+      uses: dtolnay/rust-toolchain@stable
+
     - name: Setup pnpm
       uses: pnpm/action-setup@v4.0.0
       with:
@@ -31,7 +34,7 @@ jobs:
         run_install: false
 
     - name: Install dependencies
-      run: pnpm install --ignore-scripts --ignore-optional
+      run: pnpm install --no-frozen-lockfile
         
     - name: compile
       run: pnpm run build
