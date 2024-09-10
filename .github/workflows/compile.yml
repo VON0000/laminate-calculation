@@ -1,0 +1,23 @@
+name: Compile
+
+on:
+  push:
+    branches: [ "tauri" ]
+  pull_request:
+    branches: [ "tauri" ]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build
+      run: cargo build --verbose
+    - name: Run tests
+      run: cargo test --verbose
