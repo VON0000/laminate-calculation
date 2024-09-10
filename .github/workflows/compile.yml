@@ -33,9 +33,6 @@ jobs:
         version: 9.3.0
         run_install: false
 
-    - name: List files in the current directory
-      run: ls -al
-
     - name: Install dependencies of pnpm
       run: pnpm install --frozen-lockfile
         
