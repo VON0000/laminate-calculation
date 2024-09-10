@@ -37,5 +37,5 @@ jobs:
       run: pnpm install --no-frozen-lockfile
         
     - name: compile
-      run: pnpm run build
+      run: pnpm run tauri-build
         
