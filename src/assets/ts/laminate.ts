@@ -47,6 +47,7 @@ export class LayerOnCoordinateXY extends LayerOnCoordinateLT implements Layer {
     souplesse_matrix_on_coordinate_X_Y: Matrix33
 
     T: Matrix33
+    T1: Matrix33
     raideur_matrix_on_coordinate_L_T: Matrix33
     raideur_matrix_on_coordinate_X_Y: Matrix33
 
@@ -80,6 +81,13 @@ export class LayerOnCoordinateXY extends LayerOnCoordinateLT implements Layer {
         ])
         this.T = T.valueOf() as Matrix33
 
+        let T1 = math.matrix([
+            [c ** 2, s ** 2, 2 * c * s],
+            [s ** 2, c ** 2, -2 * c * s],
+            [-c * s, c * s, c ** 2 - s ** 2]
+        ])
+        this.T1 = T1.valueOf() as Matrix33
+
         let raideur_matrix_on_coordinate_L_T = math.matrix([
             [hat_E_l, nu_tl * hat_E_l, 0],
             [hat_E_t * nu_lt, hat_E_t, 0],
@@ -87,8 +95,9 @@ export class LayerOnCoordinateXY extends LayerOnCoordinateLT implements Layer {
         ])
         this.raideur_matrix_on_coordinate_L_T = raideur_matrix_on_coordinate_L_T.valueOf() as Matrix33
 
-        let raideur_matrix_on_coordinate_X_Y = math.multiply<math.Matrix>(math.multiply(T, this.raideur_matrix_on_coordinate_L_T), math.transpose(T))
+        let raideur_matrix_on_coordinate_X_Y = math.multiply<math.Matrix>(math.multiply(T1, this.raideur_matrix_on_coordinate_L_T), math.transpose(T1))
         this.raideur_matrix_on_coordinate_X_Y = raideur_matrix_on_coordinate_X_Y.valueOf() as Matrix33
+        console.log(this.raideur_matrix_on_coordinate_L_T)
     }
 }
 
